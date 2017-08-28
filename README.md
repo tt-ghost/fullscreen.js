@@ -1,14 +1,24 @@
-# fullscreen
-simple fullscreen api for browser
+# fullscreen.js
+简单的浏览器全屏库
 
 ## 用法
 
-### 引入
+### 脚本方式引入
 ```html
 <script src='./fullscreen.js'></script>
 <script>
   fullscreen.request();
 </script>
+```
+
+### 模块方式引入
+
+```javascript
+import fullscreen from 'fullscreen.js';
+// or 
+var fullscreen = require('fullscreen.js');
+
+fullscreen.resuest();
 ```
 
 ### API
