@@ -1,5 +1,13 @@
+/*
+ * fullscreen.js
+ * author: @TT <ttghost@126.com>
+ * version: 0.1.0
+ */
 ;(function (g) {
-  var FULL_SCREEN= {
+  /*
+   * 不同浏览器对全屏支持的属性
+   */
+  var STATICS= {
     // 判断是否支持全屏
     FSE: ['fullscreenEnabled', 'mozFullScreenEnabled', 'webkitFullscreenEnabled', 'msFullscreenEnabled'],
     // 全屏事件
@@ -7,10 +15,13 @@
     // 请求全屏方法
     RFS: ['requestFullscreen', 'mozRequestFullScreen', 'webkitRequestFullScreen', 'msRequestFullscreen'],
     // 退出全屏方法
-    EFS:  ['exitFullscreen', 'mozCancelFullScreen', 'webkitCancelFullScreen', 'msExitFullscreen']
+    EFS: ['exitFullscreen', 'mozCancelFullScreen', 'webkitCancelFullScreen', 'msExitFullscreen']
   };
-  
-  // 通过js实现的全屏与浏览器F11实现的全屏不一样
+
+  /*
+   * 判断当前是否为全屏状态
+   * 注意：通过js实现的全屏与浏览器F11实现的全屏不一样
+   */
   function isFullscreen () {
     var ua = window.navigator.userAgent.toLowerCase();
     var result = false;
@@ -25,8 +36,11 @@
     return result;
   }
 
+  /*
+   * 判断当前浏览器是否支持全屏模式
+   */
   function isFullscreenEnabled () {
-    var FSE = FULL_SCREEN.FSE;
+    var FSE = STATICS.FSE;
     var result = false;
 
     for(var i = 0; i < FSE.length; i++) {
@@ -38,23 +52,26 @@
     return result;
   }
 
-  function listenFullScreen() {
-    var FSC = FULL_SCREEN.FSC;
+  /*
+   * 对全屏事件添加监听
+   */
+  function listenFullScreen(callback) {
+    var FSC = STATICS.FSC;
 
     for(var i = 0; i < FSC.length; i++) {
       var tmp = FSC[i]
       if (('on' + tmp) in document) {
-        document.addEventListener(tmp, function(){
-          console.log(isFullscreen());
-        }, false)
+        document.addEventListener(tmp, callback, false)
         break;
       }
     }
   }
-
+  /*
+   * 请求全屏
+   */
   function requestFullScreen () {
     var docElm = document.documentElement;
-    var RFS = FULL_SCREEN.RFS
+    var RFS = STATICS.RFS
 
     for(var i = 0; i < RFS.length; i++) {
       var tmp = RFS[i]
@@ -65,8 +82,11 @@
     }
   }
 
+  /*
+   * 退出全屏
+   */
   function exitFullScreen () {
-    var EFS = FULL_SCREEN.EFS;
+    var EFS = STATICS.EFS;
 
     for(var i = 0; i < EFS.length; i++) {
       var tmp = EFS[i]
@@ -76,14 +96,22 @@
       }
     }
   }
+  /*
+   * 导出变量
+   */
+  var fullscreen = {
+    STATICS: STATICS,
+    is: isFullscreen,
+    enabled: isFullscreenEnabled,
+    listen: listenFullScreen,
+    request: requestFullScreen,
+    exit: exitFullScreen
+  };
 
-  g.fullscreen = {
-    FULL_SCREEN: FULL_SCREEN,
-    isFullscreen: isFullscreen,
-    isFullscreenEnabled: isFullscreenEnabled,
-    listenFullScreen: listenFullScreen,
-    requestFullScreen: requestFullScreen,
-    exitFullScreen: exitFullScreen
+  if ( typeof module === "object" && typeof module.exports === "object" ) {
+    module.exports = fullscreen;
+  } else {
+    g.fullscreen = fullscreen;
   }
 
 })(window);
