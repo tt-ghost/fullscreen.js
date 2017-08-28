@@ -1,0 +1,12 @@
+{
+  "name": "fullscreen.js",
+  "version": "0.1.0",
+  "description": "simple fullscreen lib for browser",
+  "main": "fullscreen.js",
+  "author": "ttghost@126.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tt-ghost/fullscreen.js.git"
+  }
+}
