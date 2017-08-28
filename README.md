@@ -1,4 +1,5 @@
 # fullscreen.js
+
 简单的浏览器全屏库
 
 ## 用法
@@ -41,9 +42,9 @@ fullscreen.resuest();
   FSE: ['fullscreenEnabled', 'mozFullScreenEnabled', 'webkitFullscreenEnabled', 'msFullscreenEnabled'],
   // 全屏事件
   FSC: ['fullscreenchange', 'mozfullscreenchange', 'webkitfullscreenchange', 'msfullscreenchange'],
-  // 请求全屏方法
+  // 请求全屏的方法
   RFS: ['requestFullscreen', 'mozRequestFullScreen', 'webkitRequestFullScreen', 'msRequestFullscreen'],
-  // 退出全屏方法
+  // 退出全屏的方法
   EFS: ['exitFullscreen', 'mozCancelFullScreen', 'webkitCancelFullScreen', 'msExitFullscreen']
 }
 ```

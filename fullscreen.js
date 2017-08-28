@@ -1,7 +1,7 @@
 /*
  * fullscreen.js
  * author: @TT <ttghost@126.com>
- * version: 0.1.0
+ * version: 0.1.1
  */
 ;(function (g) {
   /*

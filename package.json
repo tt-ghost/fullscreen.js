@@ -1,7 +1,8 @@
 {
   "name": "fullscreen.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "simple fullscreen lib for browser",
+  "keywords": ["fullscreen", "screenfull", "browser", "library"],
   "main": "fullscreen.js",
   "author": "ttghost@126.com",
   "license": "ISC",
