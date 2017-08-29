@@ -4,15 +4,32 @@
 
 ## 用法
 
-### 脚本方式引入
+### 安装
+
+- 模块化方式
+
+```javascript
+npm install fullscreen.js --save
+
+```
+
+- `script` 方式引入
+
 ```html
 <script src='./fullscreen.js'></script>
+```
+
+### 调用
+
+- 脚本方式
+
+```html
 <script>
   fullscreen.request();
 </script>
 ```
 
-### 模块方式引入
+- 模块化方式
 
 ```javascript
 import fullscreen from 'fullscreen.js';
@@ -34,17 +51,3 @@ fullscreen.resuest();
 |`exit`|`Function`|无|退出全屏|`fullscreen.exit()`|
 
 
-- `FULL_SCREEN` 说明
-
-```javascript
-{
-  // 判断是否支持全屏
-  FSE: ['fullscreenEnabled', 'mozFullScreenEnabled', 'webkitFullscreenEnabled', 'msFullscreenEnabled'],
-  // 全屏事件
-  FSC: ['fullscreenchange', 'mozfullscreenchange', 'webkitfullscreenchange', 'msfullscreenchange'],
-  // 请求全屏的方法
-  RFS: ['requestFullscreen', 'mozRequestFullScreen', 'webkitRequestFullScreen', 'msRequestFullscreen'],
-  // 退出全屏的方法
-  EFS: ['exitFullscreen', 'mozCancelFullScreen', 'webkitCancelFullScreen', 'msExitFullscreen']
-}
-```
