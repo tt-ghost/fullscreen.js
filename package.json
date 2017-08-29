@@ -1,13 +1,24 @@
 {
   "name": "fullscreen.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "simple fullscreen lib for browser",
-  "keywords": ["fullscreen", "screenfull", "browser", "library"],
+  "keywords": [
+    "fullscreen",
+    "screenfull",
+    "browser",
+    "library"
+  ],
   "main": "fullscreen.js",
   "author": "ttghost@126.com",
   "license": "ISC",
+  "scripts": {
+    "build": "webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:tt-ghost/fullscreen.js.git"
+  },
+  "dependencies": {
+    "webpack": "^3.5.5"
   }
 }
