@@ -16,7 +16,7 @@ npm install fullscreen.js --save
 - `script` 方式引入
 
 ```html
-<script src='./fullscreen.js'></script>
+<script src='./fullscreen.min.js'></script>
 ```
 
 ### 调用
