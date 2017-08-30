@@ -43,7 +43,6 @@ fullscreen.resuest();
 
 |方法名|类型|参数|说明|示例|
 |-----|---|----|---|---|
-|`STATICS`|`Object`|无|不同浏览器对全屏支持的属性|`fullscreen.STATICS`|
 |`is`|`Function`|无|判断当前是否为全屏状态|`fullscreen.is()`|
 |`enabled`|`Function`|无|判断当前浏览器是否支持全屏模式|`fullscreen.enabled()`|
 |`listen`|`Function`|`Function`|对全屏事件添加监听|`fullscreen.listen(function(){fullscreen.is()})`|
