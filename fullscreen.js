@@ -107,7 +107,7 @@
     request: requestFullScreen,
     exit: exitFullScreen
   };
-  
+  console.log(typeof module)
   if ( typeof module === "object" && typeof module.exports === "object" ) {
     module.exports = fullscreen;
   } else {
