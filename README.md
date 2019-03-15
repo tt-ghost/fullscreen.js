@@ -2,6 +2,8 @@
 
 > simple browser full screen library, compatible with common mainstream browsers
 
+## Demo
+[http://fe1024.com/demos/fullscreen/examples/](http://fe1024.com/demos/fullscreen/examples/)
 
 ## install
 

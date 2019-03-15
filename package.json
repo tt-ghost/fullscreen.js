@@ -1,6 +1,6 @@
 {
   "name": "fullscreen.js",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "simple browser full screen library, compatible with common mainstream browsers",
   "keywords": [
     "fullscreen",
@@ -14,7 +14,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js",
-    "build": "webpack --config ./build/webpack.build.conf.js"
+    "build": "webpack --config ./build/webpack.build.conf.js",
+    "build-demo": "webpack --config ./build/webpack.build-demo.conf.js"
   },
   "files": [
     "src",
