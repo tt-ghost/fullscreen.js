@@ -1,6 +1,6 @@
 {
   "name": "fullscreen.js",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "simple fullscreen lib for browser",
   "keywords": [
     "fullscreen",
@@ -9,19 +9,31 @@
     "library"
   ],
   "main": "fullscreen.js",
-  "author": "ttghost@126.com",
-  "license": "ISC",
+  "author": "橙子 <ttghost@126.com>",
+  "license": "MIT",
   "scripts": {
-    "build": "gulp"
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js",
+    "build": "webpack --config ./build/webpack.build.conf.js"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:tt-ghost/fullscreen.js.git"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^3.0.0",
-    "pump": "^1.0.2"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
   }
 }

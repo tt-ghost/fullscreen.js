@@ -36,7 +36,7 @@ import fullscreen from 'fullscreen.js';
 // or 
 var fullscreen = require('fullscreen.js');
 
-fullscreen.resuest();
+fullscreen.request();
 ```
 
 ### API
