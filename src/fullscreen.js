@@ -87,7 +87,7 @@ function exitFullScreen () {
  * export global object
  */
 var fullscreen = {
-  STATICS: STATICS,
+  STATICS: JSON.parse(JSON.stringify(STATICS)),
   is: isFullscreen,
   enabled: isFullscreenEnabled,
   listen: listenFullScreen,

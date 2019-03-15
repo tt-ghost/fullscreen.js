@@ -1,14 +1,14 @@
 {
   "name": "fullscreen.js",
-  "version": "0.2.0",
-  "description": "simple fullscreen lib for browser",
+  "version": "0.2.1",
+  "description": "simple browser full screen library, compatible with common mainstream browsers",
   "keywords": [
     "fullscreen",
     "screenfull",
     "browser",
     "library"
   ],
-  "main": "fullscreen.js",
+  "main": "./dist/fullscreen.min.js",
   "author": "橙子 <ttghost@126.com>",
   "license": "MIT",
   "scripts": {
