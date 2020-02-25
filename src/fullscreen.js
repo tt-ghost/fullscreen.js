@@ -21,7 +21,7 @@ var STATICS= {
  * Notice: it's diffrence about js and F11 hot key
  */
 function isFullscreen () {
-  return document['fullscreen' || 'webkitIsFullScreen' || 'mozFullScreen'] || false;
+  return ['fullscreen', 'webkitIsFullScreen', 'mozFullScreen'].some(name => document[name])
 }
 
 /*
