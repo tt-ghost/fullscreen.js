@@ -5,7 +5,7 @@
 ## Demo
 [http://fe1024.com/demos/fullscreen/examples/](http://fe1024.com/demos/fullscreen/examples/)
 
-## install
+## Install
 
 ```js
 npm install fullscreen.js --save
@@ -13,7 +13,7 @@ npm install fullscreen.js --save
 <script src='./fullscreen.min.js'></script>
 ```
 
-## usage
+## Usage
 
 ```js
 import fullscreen from 'fullscreen.js';
