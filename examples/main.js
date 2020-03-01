@@ -1,5 +1,4 @@
 var fullscreen = require('../src/fullscreen')
-
 // element
 var requestBtn = document.getElementById('request')
 var exitBtn = document.getElementById('exit')

@@ -3,7 +3,7 @@
 > simple browser full screen library, compatible with common mainstream browsers
 
 ## Demo
-[Demo](http://tt-ghost.github.io/demos/fullscreen/)
+[Demo](http://fe1024.com/demos/fullscreen/)
 
 ## Install
 

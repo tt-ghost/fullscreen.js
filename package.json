@@ -1,6 +1,6 @@
 {
   "name": "fullscreen.js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "simple browser full screen library, compatible with common mainstream browsers",
   "keywords": [
     "fullscreen",
@@ -9,7 +9,7 @@
     "library"
   ],
   "main": "./dist/fullscreen.min.js",
-  "author": "橙子 <ttghost@126.com>",
+  "author": "Chengzi <ttghost@126.com>",
   "license": "MIT",
   "scripts": {
     "start": "npm run dev",
