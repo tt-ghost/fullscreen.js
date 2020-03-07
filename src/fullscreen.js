@@ -77,7 +77,7 @@ function exitFullScreen () {
 
   for(var i = 0; i < EFS.length; i++) {
     var tmp = EFS[i]
-    if (tmp in document) {
+    if (tmp in document && document.fullscreenElement !== null) {
       document[tmp]();
       break;
     }
