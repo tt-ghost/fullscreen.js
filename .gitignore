@@ -1,3 +1,4 @@
 node_modules/
 examples-dist/
-yarn-lock.json
+yarn.lock
+package-lock.json
