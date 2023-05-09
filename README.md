@@ -3,6 +3,7 @@
 > simple browser full screen library, compatible with common mainstream browsers
 
 ## Demo
+
 [Demo](http://fe1024.com/demos/fullscreen/)
 
 ## Install
@@ -16,21 +17,24 @@ npm install fullscreen.js --save
 ## Usage
 
 ```js
-import fullscreen from 'fullscreen.js';
-// or 
+import fullscreen from "fullscreen.js";
+// or
 // var fullscreen = require('fullscreen.js');
 fullscreen.request();
 ```
 
 ## API
+
 - `fullscreen.is()`: whether it's full screen status
 - `fullscreen.enabled()`: whether it's support full screen mode
 - `fullscreen.listen(callback)`: add full screen event listener
+
 ```js
-fullscreen.listen(function(){
+fullscreen.listen(function () {
   // whether it's full screen status
-  fullscreen.is()
-})
+  fullscreen.is();
+});
 ```
+
 - `fullscreen.request()`: request full screen
 - `fullscreen.exit()`: exit full screen

@@ -5,50 +5,72 @@
 /*
  * attributes supported by different browsers for fullscreen
  */
-var STATICS= {
+const STATICS = {
   // determine whether it's supported
-  FSE: ['fullscreenEnabled', 'mozFullScreenEnabled', 'webkitFullscreenEnabled', 'msFullscreenEnabled'],
+  FSE: [
+    "fullscreenEnabled",
+    "mozFullScreenEnabled",
+    "webkitFullscreenEnabled",
+    "msFullscreenEnabled",
+  ],
   // full screen change event
-  FSC: ['fullscreenchange', 'mozfullscreenchange', 'webkitfullscreenchange', 'msfullscreenchange'],
+  FSC: [
+    "fullscreenchange",
+    "mozfullscreenchange",
+    "webkitfullscreenchange",
+    "msfullscreenchange",
+  ],
   // request full screen method
-  RFS: ['requestFullscreen', 'mozRequestFullScreen', 'webkitRequestFullScreen', 'msRequestFullscreen'],
+  RFS: [
+    "requestFullscreen",
+    "mozRequestFullScreen",
+    "webkitRequestFullScreen",
+    "msRequestFullscreen",
+  ],
   // exit full screen method
-  EFS: ['exitFullscreen', 'mozCancelFullScreen', 'webkitCancelFullScreen', 'msExitFullscreen']
+  EFS: [
+    "exitFullscreen",
+    "mozCancelFullScreen",
+    "webkitCancelFullScreen",
+    "msExitFullscreen",
+  ],
 };
 
 /*
  * determine whether it's currently full screen
  * Notice: it's diffrence about js and F11 hot key
  */
-function isFullscreen () {
-  return ['fullscreen', 'webkitIsFullScreen', 'mozFullScreen'].some(name => document[name])
+function isFullscreen() {
+  return ["fullscreen", "webkitIsFullScreen", "mozFullScreen"].some(
+    (name) => document[name]
+  );
 }
 
 /*
  * is support fullscreen api on current browser
  */
-function isFullscreenEnabled () {
-  var FSE = STATICS.FSE;
-  var result = false
-  for(var i = 0; i < FSE.length; i++) {
+function isFullscreenEnabled() {
+  const FSE = STATICS.FSE;
+  let result = false;
+  for (let i = 0; i < FSE.length; i++) {
     if (FSE[i] in document) {
-      result = true
+      result = true;
       break;
     }
   }
-  return result
+  return result;
 }
 
 /*
  * add listener for fullscreen event
  */
 function listenFullScreen(callback) {
-  var FSC = STATICS.FSC;
+  const { FSC } = STATICS;
 
-  for(var i = 0; i < FSC.length; i++) {
-    var tmp = FSC[i]
-    if (('on' + tmp) in document) {
-      document.addEventListener(tmp, callback, false)
+  for (let i = 0; i < FSC.length; i++) {
+    const tmp = FSC[i];
+    if ("on" + tmp in document) {
+      document.addEventListener(tmp, callback, false);
       break;
     }
   }
@@ -56,12 +78,12 @@ function listenFullScreen(callback) {
 /*
  * request full screen
  */
-function requestFullScreen () {
-  var docElm = document.documentElement;
-  var RFS = STATICS.RFS
+function requestFullScreen() {
+  const docElm = document.documentElement;
+  const { RFS } = STATICS;
 
-  for(var i = 0; i < RFS.length; i++) {
-    var tmp = RFS[i]
+  for (let i = 0; i < RFS.length; i++) {
+    const tmp = RFS[i];
     if (tmp in docElm) {
       docElm[tmp]();
       break;
@@ -72,11 +94,11 @@ function requestFullScreen () {
 /*
  * exit fullscreen method
  */
-function exitFullScreen () {
-  var EFS = STATICS.EFS;
+function exitFullScreen() {
+  const { EFS } = STATICS;
 
-  for(var i = 0; i < EFS.length; i++) {
-    var tmp = EFS[i]
+  for (let i = 0; i < EFS.length; i++) {
+    const tmp = EFS[i];
     if (tmp in document && document.fullscreenElement !== null) {
       document[tmp]();
       break;
@@ -86,12 +108,11 @@ function exitFullScreen () {
 /*
  * export global object
  */
-var fullscreen = {
+module.exports = {
   STATICS: JSON.parse(JSON.stringify(STATICS)),
   is: isFullscreen,
   enabled: isFullscreenEnabled,
   listen: listenFullScreen,
   request: requestFullScreen,
-  exit: exitFullScreen
+  exit: exitFullScreen,
 };
-module.exports = fullscreen
